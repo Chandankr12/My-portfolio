@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chandan Kumar Das | Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 70px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            background: rgba(15, 15, 20, 0.95);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #b026ff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #b026ff;
+        }
+
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #b026ff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h3 {
+            font-size: 1.5rem;
+            color: #aaa;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin: 10px 0;
+        }
+
+        .hero-text h1 span {
+            color: #b026ff;
+        }
+
+        .hero-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #element {
+            color: #b026ff;
+        }
+
+        .hero-text p {
+            color: #aaa;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 25px;
+
+            border: 1px solid #b026ff;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #b026ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px #b026ff;
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid #b026ff;
+
+            box-shadow: 0 0 40px rgba(176, 38, 255, 0.5);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+
+            text-align: center;
+
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #222;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+
+            border-color: #b026ff;
+
+            box-shadow:
+                0 0 20px rgba(176, 38, 255, 0.25);
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+     .projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 30px;
+    background: #111;
+    border: 1px solid #222;
+    border-left: 4px solid #b026ff;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.25);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.tech-stack {
+    margin-top: 15px;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.project-links a {
+    padding: 9px 18px;
+    border: 1px solid #b026ff;
+    border-radius: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    background: #b026ff;
+    box-shadow: 0 0 12px rgba(176, 38, 255, 0.5);
+}
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+       .education-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.education-card {
+    padding: 30px;
+    background: #111;
+    border: 1px solid #222;
+    border-left: 4px solid #b026ff;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+    border-color: #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.25);
+}
+
+.education-card h3 {
+    margin-bottom: 15px;
+}
+
+.education-card p {
+    color: #aaa;
+    margin: 7px 0;
+}
+
+
+        /* =========================
+           CERTIFICATES
+        ========================= */
+
+        .certificates {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .certificate {
+            padding: 25px;
+
+            background: #111;
+
+            border: 1px solid #222;
+
+            border-radius: 12px;
+
+            text-align: center;
+        }
+
+        .certificate h3 {
+            margin-bottom: 10px;
+        }
+
+        .certificate p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    width: 100%;
+    max-width: 700px;
+    padding: 35px;
+
+    background: #111;
+
+    border: 1px solid #222;
+    border-left: 4px solid #b026ff;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.25);
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.contact-info a {
+    padding: 10px 18px;
+
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    color: #ddd;
+
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: white;
+    background: #b026ff;
+    border-color: #b026ff;
+}
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            border-top: 1px solid #222;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                padding-top: 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            Chandan<span></span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>
+                Chandan <span>Kumar Das</span>
+            </h1>
+
+            <h2>
+                <span id="element"></span>
+            </h2>
+
+            <p>
+                Undergraduate student passionate about software development,
+                Java, Data Structures & Algorithms and backend development.
+                I enjoy solving problems and building practical projects.
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img src="chandan1b.png"
+                alt="">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
+
+            <p>
+                I am an undergraduate student with a strong interest in
+                software development and problem solving. I am currently
+                learning Java, Data Structures and Algorithms while also
+                exploring web and backend development.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to continuously improve my technical skills,
+                build real-world projects and become a professional
+                backend developer.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>Java</h3>
+                <p>Core Java & OOP</p>
+            </div>
+
+            <div class="skill">
+                <h3>DSA</h3>
+                <p>Problem Solving</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Web Structure</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Responsive Design</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Web Interactivity</p>
+            </div>
+
+            <div class="skill">
+                <h3>Node.js</h3>
+                <p>Backend Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>Express.js</h3>
+                <p>REST APIs</p>
+            </div>
+
+            <div class="skill">
+                <h3>MongoDB</h3>
+                <p>Database</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+    <h2 class="section-title">
+        My <span>Project</span>
+    </h2>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+                A professional and responsive personal portfolio website
+                created to showcase my skills, education, projects and
+                achievements.
+            </p>
+
+            <p class="tech-stack">
+                <strong>Technologies:</strong>
+                HTML, CSS, JavaScript
+            </p>
+
+            <div class="project-links">
+
+                <a href="YOUR_GITHUB_LINK" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="YOUR_PROJECT_LINK" target="_blank">
+                    Live Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+    <h2 class="section-title">
+        My <span>Education</span>
+    </h2>
+
+    <div class="education-container">
+
+        <!-- 10th -->
+        <div class="education-card">
+            <h3>Class 10th</h3>
+            <p>Secondary Education</p>
+            <p>St.Thomas High School,Topchanchi,Dhanbad,Jharkhand</p>
+            <p>Board: CBSE</p>
+            <p>PassingYear: 2022</p>
+        </div>
+
+        <!-- 12th -->
+        <div class="education-card">
+            <h3>Class 12th</h3>
+            <p>Senior Secondary Education</p>
+            <p>Rajganj Inter College,Rajganj,Dhanbad,Jharkhand</p>
+            <p>Board: JAC</p>
+            <p>Passing Year: 2024</p>
+        </div>
+
+        <!-- Engineering -->
+        <div class="education-card">
+            <h3>Bachelor of Technology (B.Tech)</h3>
+            <p>Computer Science(AI-ML) / Engineering</p>
+            <p>Ambalika Institute of Management and Technology</p>
+            <p>Currently Pursuing</p>
+            <p>2026 - Present</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         CERTIFICATES
+    ========================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            <span>Certificates</span>
+        </h2>
+
+        <div class="certificates">
+
+            <div class="certificate">
+
+                <h3>
+                    Generative AI
+                </h3>
+
+                <p>
+                    Introduction to Generative AI
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+                    Prompt Engineering
+                </h3>
+
+                <p>
+                    Introduction to Prompt Engineering
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+                    GitHub Copilot
+                </h3>
+
+                <p>
+                    Introduction to GitHub Copilot
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+    <h2 class="section-title">
+        Contact <span>Me</span>
+    </h2>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <h3>Let's Connect</h3>
+
+            <p>
+                Feel free to contact me for collaboration,
+                projects or any professional opportunity.
+            </p>
+
+            <div class="contact-info">
+
+                <a href="mailto:chandankumardas1076.sths@gmail.com">
+                    📧 Email
+                </a>
+
+                <a href="tel:+91 9771183102">
+                    📱 Mobile
+                </a>
+
+                <a href="https://www.linkedin.com/in/chandan91kr/" target="_blank">
+                    💼 LinkedIn
+                </a>
+
+                <a href="https://github.com/Chandankr12" target="_blank">
+                    💻 GitHub
+                </a>
+
+                <a href="https://leetcode.com/u/chandan91kr/" target="_blank">
+                    🧩 LeetCode
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Chandan Kumar Das. All Rights Reserved.
+
+    </footer>
+
+
+    <!-- TYPED.JS -->
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+
+    <script>
+
+        var typed = new Typed("#element", {
+
+            strings: [
+                "Java Developer",
+                "DSA Learner",
+                "Backend Developer",
+                "Software Developer"
+            ],
+
+            typeSpeed: 60,
+
+            backSpeed: 30,
+
+            loop: true
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+
